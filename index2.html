@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitkara University | Survey Form</title>
+    <style>
+
+        .container 
+        {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* hide the default radio buttim */
+
+        .container input 
+        {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* create a new button */
+
+        .checkmark 
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 1px solid #999;
+            border-radius: 50%;
+            
+        }
+
+        /* on hovering add a grey background color */
+
+        .container:hover input ~ .checkmark 
+        {
+            background-color: #f1f1f1;
+        }
+
+        /* add a blue background */
+
+        .container input:checked ~ .checkmark 
+        {
+            background-color: #fff;
+        }
+
+        .checkmark:after 
+        {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .container input:checked ~ .checkmark:after 
+        {
+            display: block;
+        }
+
+        /* customizin the new button*/
+
+        .container .checkmark:after
+        {
+            top: 4px;
+            left: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #404040;
+        }
+
+        .boxperquestion
+        {
+            width: 50vw;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: rgb(241, 233, 241);
+            font-family: "Calibri", sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.85);
+            margin-bottom: 0.5cm;
+        }
+
+        .forh1
+        {
+            font-family: "Calibri", sans-serif;
+            font-size: x-large;
+            font-weight: bold;
+            width: 50vw;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color:  rgb(255, 255, 255);
+            line-height: 1.5;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.85);
+            margin-bottom: 0.5cm;
+        }
+
+        .forh2
+        {
+            font-family: "Calibri", sans-serif;
+            font-size: x-large;
+            font-weight: bold;
+            width: 50vw;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #FFFF;
+            line-height: 1.5;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.85);
+            margin-bottom: 0.5cm;
+        }
+
+        .imgcenter 
+        {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+        }
+
+        body
+        {
+            background-image: url("backdrop.jpg");
+            background-repeat:no-repeat;
+            background-attachment: unset;
+            background-size: cover;
+  
+        }
+
+        .textarea
+        {
+            font-family:"Calibri", sans-serif;
+            font-size: x-large;
+        }
+
+        .label1
+        {
+            display: block;
+			margin-bottom: 10px;
+            font-size: xx-large;
+            font-weight: bold;
+        }
+
+        .button
+        {
+            display: inline-block;
+            border-radius: 8px;
+            background-color: #404040;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span
+        {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after
+        {
+            content: "\00bb";
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span
+        {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after
+        {
+            opacity: 1;
+            right: 0;
+        }
+
+        .feedbackthing
+        {
+            height: 7em;
+            width: 49.5vw;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: "Calibri", sans-serif;
+        }
+
+        .stt 
+        {
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: rgb(255, 255, 255) url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='currentColor' d='M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z'%3E%3C/path%3E%3C/svg%3E") center no-repeat;
+            box-shadow: 0 0.25rem 0.5rem 0 rgb(63, 63, 63);
+            opacity: 0.7;
+        }
+
+        .stt:hover 
+        {
+            opacity: 0.8;
+        }
+
+        .stt:focus 
+        {
+            opacity: 0.9;
+        }
+
+        .stt:active 
+        {
+            opacity: 1;
+        }
+
+        .quesbtn
+        {
+            display: inline-block;
+            border-radius: 5px;
+            background-color: #404040;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 15px;
+            padding: 5px;
+            width: 60px;
+            height: 40px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            margin-right: 10px;
+            margin-left: 21px;
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <script src="jquery-3.7.0.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $("#button1").click(function(){
+    $("#div1").slideDown("150");
+    $("#div2").slideUp("150");
+    $("#div3").slideUp("150");
+    $("#div4").slideUp("150");
+    $("#div5").slideUp("150");
+    $("#div6").slideUp("150");
+    $("#div7").slideUp("150");
+    $("#div8").slideUp("150");
+    $("#div9").slideUp("150");
+    $("#div10").slideUp("150");
+    $("#div11").slideUp("150");
+    });
+    });
+    $(document).ready(function(){
+    $("#button2").click(function(){
+    $("#div1").slideUp("150");
+    $("#div2").slideDown("150");
+    $("#div3").slideUp("150");
+    $("#div4").slideUp("150");
+    $("#div5").slideUp("150");
+    $("#div6").slideUp("150");
+    $("#div7").slideUp("150");
+    $("#div8").slideUp("150");
+    $("#div9").slideUp("150");
+    $("#div10").slideUp("150");
+    $("#div11").slideUp("150");
+    });
+    });
+    $(document).ready(function(){
+    $("#button3").click(function(){
+    $("#div1").slideUp("150");
+    $("#div2").slideUp("150");
+    $("#div3").slideDown("150");
+    $("#div4").slideUp("150");
+    $("#div5").slideUp("150");
+    $("#div6").slideUp("150");
+    $("#div7").slideUp("150");
+    $("#div8").slideUp("150");
+    $("#div9").slideUp("150");
+    $("#div10").slideUp("150");
+    $("#div11").slideUp("150");
+    });
+    });
+    $(document).ready(function(){
+    $("#button4").click(function(){
+    $("#div1").slideUp("150");
+    $("#div2").slideUp("150");
+    $("#div3").slideUp("150");
+    $("#div4").slideDown("150");
+    $("#div5").slideUp("150");
+    $("#div6").slideUp("150");
+    $("#div7").slideUp("150");
+    $("#div8").slideUp("150");
+    $("#div9").slideUp("150");
+    $("#div10").slideUp("150");
+    $("#div11").slideUp("150");
+    });
+    });
+    $(document).ready(function(){
+    $("#button5").click(function(){
+    $("#div1").slideUp("150");
+    $("#div2").slideUp("150");
+    $("#div3").slideUp("150");
+    $("#div4").slideUp("150");
+    $("#div5").slideDown("150");
+    $("#div6").slideUp("150");
+    $("#div7").slideUp("150");
+    $("#div8").slideUp("150");
+    $("#div9").slideUp("150");
+    $("#div10").slideUp("150");
+    $("#div11").slideUp("150");
+    });
+    });
+    $(document).ready(function(){
+    $("#button6").click(function(){
+    $("#div1").slideUp("150");
+    $("#div2").slideUp("150");
+    $("#div3").slideUp("150");
+    $("#div4").slideUp("150");
+    $("#div5").slideUp("150");
+    $("#div6").slideDown("150");
+    $("#div7").slideUp("150");
+    $("#div8").slideUp("150");
+    $("#div9").slideUp("150");
+    $("#div10").slideUp("150");
+    $("#div11").slideUp("150");
+    });
+    });
+    $(document).ready(function(){
+    $("#button7").click(function(){
+    $("#div1").slideUp("150");
+    $("#div2").slideUp("150");
+    $("#div3").slideUp("150");
+    $("#div4").slideUp("150");
+    $("#div5").slideUp("150");
+    $("#div6").slideUp("150");
+    $("#div7").slideDown("150");
+    $("#div8").slideUp("150");
+    $("#div9").slideUp("150");
+    $("#div10").slideUp("150");
+    $("#div11").slideUp("150");
+    });
+    });
+    $(document).ready(function(){
+    $("#button8").click(function(){
+    $("#div1").slideUp("150");
+    $("#div2").slideUp("150");
+    $("#div3").slideUp("150");
+    $("#div4").slideUp("150");
+    $("#div5").slideUp("150");
+    $("#div6").slideUp("150");
+    $("#div7").slideUp("150");
+    $("#div8").slideDown("150");
+    $("#div9").slideUp("150");
+    $("#div10").slideUp("150");
+    $("#div11").slideUp("150");
+    });
+    });
+    $(document).ready(function(){
+    $("#button9").click(function(){
+    $("#div1").slideUp("150");
+    $("#div2").slideUp("150");
+    $("#div3").slideUp("150");
+    $("#div4").slideUp("150");
+    $("#div5").slideUp("150");
+    $("#div6").slideUp("150");
+    $("#div7").slideUp("150");
+    $("#div8").slideUp("150");
+    $("#div9").slideDown("150");
+    $("#div10").slideUp("150");
+    $("#div11").slideUp("150");
+    });
+    });
+    $(document).ready(function(){
+    $("#button10").click(function(){
+    $("#div1").slideUp("150");
+    $("#div2").slideUp("150");
+    $("#div3").slideUp("150");
+    $("#div4").slideUp("150");
+    $("#div5").slideUp("150");
+    $("#div6").slideUp("150");
+    $("#div7").slideUp("150");
+    $("#div8").slideUp("150");
+    $("#div9").slideUp("150");
+    $("#div10").slideDown("150");
+    $("#div11").slideUp("150");
+    });
+    });
+    $(document).ready(function(){
+    $("#button11").click(function(){
+    $("#div1").slideUp("150");
+    $("#div2").slideUp("150");
+    $("#div3").slideUp("150");
+    $("#div4").slideUp("150");
+    $("#div5").slideUp("150");
+    $("#div6").slideUp("150");
+    $("#div7").slideUp("150");
+    $("#div8").slideUp("150");
+    $("#div9").slideUp("150");
+    $("#div10").slideUp("150");
+    $("#div11").slideDown("150");
+    });
+    });
+
+
+    //to hide all tabs except question 1 at the start
+    (document).load(function () {
+        $(document).ready(function(){
+    $("#button1").click(function(){
+    $("#div2").hide;
+    $("#div3").hide;
+    $("#div4").hide;
+    $("#div5").hide;
+    $("#div6").hide;
+    $("#div7").hide;
+    $("#div8").hide;
+    $("#div9").hide;
+    $("#div10").hide;
+    $("#div11").hide;
+    });
+    });
+    });
+
+</script>
+    <div class="forh1">
+        <img class="imgcenter" src="https://www.chitkara.edu.in/chitkara-university-logo.png">
+        <h1 align="center">
+            
+        </h1>
+    </div>
+    <div class="boxperquestion">
+        <button id="button1" class="quesbtn">Q-1</button>
+        <button id="button2" class="quesbtn">Q-2</button>
+        <button id="button3" class="quesbtn">Q-3</button>
+        <button id="button4" class="quesbtn">Q-4</button>
+        <button id="button5" class="quesbtn">Q-5</button>
+        <button id="button6" class="quesbtn">Q-6</button>
+        <button id="button7" class="quesbtn">Q-7</button>
+        <button id="button8" class="quesbtn">Q-8</button>
+        <button id="button9" class="quesbtn">Q-9</button>
+        <button id="button10" class="quesbtn">Q-10</button>
+        <!-- <button id="button11">Q-11</button> -->
+    </div>
+    <form action="index3.html">
+    <div class="boxperquestion" id="div1">
+        <div>
+        <h1>1. Are you satisfied with the teaching staff and their teaching methods?</h1>
+        <label class="container">Very dissatisfied
+            <input type="radio" name="radio" >
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Dissatisfied
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Niether dissatisfied nor satisfied
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Satisfied
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Very satisfied
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+        </label>
+        </div>
+    </div>
+    <div class="boxperquestion" id="div2" style="display: none;">
+        <div>
+        <h1>2. How satisfied are you with the facilities provided by the college?</h1>
+        <label class="container">Very dissatisfied
+            <input type="radio" name="radio1" >
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Dissatisfied
+            <input type="radio" name="radio1">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Niether dissatisfied nor satisfied
+            <input type="radio" name="radio1">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Satisfied
+            <input type="radio" name="radio1">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Very satisfied
+            <input type="radio" name="radio1">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+</div>
+    <div class="boxperquestion" id="div3" style="display: none;">
+        <div>
+        <h1>3. Was it easy to obtain the necessary resources from the college library?</h1>
+        <label class="container">Yes
+            <input type="radio" name="radio2" >
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">No
+            <input type="radio" name="radio2">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    </div>
+    <div class="boxperquestion" id="div4" style="display: none;">
+        <div>
+        <h1>4. Do you feel it is easier to register for different courses within the college?</h1>
+        <label class="container">Easy
+            <input type="radio" name="radio3" >
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Niether difficult nor easy
+            <input type="radio" name="radio3">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Difficult
+            <input type="radio" name="radio3">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+</div>
+    <div class="boxperquestion" id="div5" style="display: none;">
+        <div>
+        <h1>5. How satisfied are you with the cleanliness and variety of food items available in the cafeteria?</h1>
+        <label class="container">Very dissatisfied
+            <input type="radio" name="radio4" >
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Dissatisfied
+            <input type="radio" name="radio4">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Niether dissatisfied nor satisfied
+            <input type="radio" name="radio4">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Satisfied
+            <input type="radio" name="radio4">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Very satisfied
+            <input type="radio" name="radio4">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+</div>
+    <div class="boxperquestion" id="div6" style="display: none;">
+        <div>
+        <h1>6. How supportive were the faculty members?</h1>
+        <label class="container">Extremely Supportive
+            <input type="radio" name="radio5" >
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Supportive enough
+            <input type="radio" name="radio5">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Neutral
+            <input type="radio" name="radio5">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Not supportive
+            <input type="radio" name="radio5">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+</div>
+    <div class="boxperquestion" id="div7" style="display: none;">
+        <div>
+        <h1>7. What do you think of the hostel?</h1>
+        <label class="container">Extremely crowded
+            <input type="radio" name="radio6" >
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Very crowded
+            <input type="radio" name="radio6">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Somewhat crowded
+            <input type="radio" name="radio6">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Not so crowded
+            <input type="radio" name="radio6">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Not at all crowded
+            <input type="radio" name="radio6">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+</div>
+    <div class="boxperquestion" id="div8" style="display: none;">
+        <div>
+        <h1>8. Do you think faculty and support staff at the college were helpful?</h1>
+        <label class="container">Very helpful
+            <input type="radio" name="radio7" >
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Helpful
+            <input type="radio" name="radio7">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Niether helpful nor unhelpful
+            <input type="radio" name="radio7">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Unhelpful
+            <input type="radio" name="radio7">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Very unhelpful
+            <input type="radio" name="radio7">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+</div>
+    <div class="boxperquestion" id="div9" style="display: none;">
+        <div>
+        <h1>9. Are you satisfied with the teaching staff and their practices?</h1>
+        <label class="container">Very satisfied
+            <input type="radio" name="radio8" >
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Satisfied
+            <input type="radio" name="radio8">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Niether satisfied nor dissatisfied
+            <input type="radio" name="radio8">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Dissatisfied
+            <input type="radio" name="radio8">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Very dissatisfied
+            <input type="radio" name="radio8">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+</div>
+    <div class="boxperquestion" id="div10" style="display: none;">
+        <div>
+        <h1>10. How likely are you to continue attending this college next year?</h1>
+        <label class="container">Extremely likely
+            <input type="radio" name="radio9" >
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Very likely
+            <input type="radio" name="radio9">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Somewhat likely
+            <input type="radio" name="radio9">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Not so likely
+            <input type="radio" name="radio9">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Not at all likely
+            <input type="radio" name="radio9">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+</div>
+    <div class="boxperquestion" id="div10">
+        <div>
+        <button type="submit" class="button" style="vertical-align:middle">
+        <span>Submit Here! </span></button>
+        <button type="reset" class="button" style="vertical-align:middle">
+        <span>Reset</span></button>
+        <button type="button" class="button" style="vertical-align:middle " onclick="history.back()">
+        <span>Go Back</span></button>
+    </div>
+</div>
+    </form>
+
+</body>
+</html>

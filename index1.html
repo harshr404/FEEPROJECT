@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chitkara University | Details</title>
+      <style>
+          html 
+          {
+            height: 100%;
+          }
+          body 
+          {
+            margin:0;
+            padding:0;
+            font-family: sans-serif;
+            background-image: url("backdrop.jpg");
+            background-repeat:no-repeat;
+            background-size: cover;
+            }
+
+          .login-box 
+          {
+          position: absolute;
+            top: 50%;
+            left: 50%;
+            width:20vw ;
+            padding: 2vw;
+            transform: translate(-50%, -50%);
+            background: rgba(0,5,25,.4);
+            box-sizing: border-box;
+            border-radius: 10px;
+            backdrop-filter: blur(20px);
+            font-size: 1vw;
+          }
+
+          .login-box h2 
+          {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+          }
+
+          .login-box .user-box 
+          {
+            position: relative;
+          }
+
+          .login-box .user-box input 
+          {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+          }
+            .login-box .user-box label 
+          {
+            position: absolute;
+            top:0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+          }
+
+          .login-box .user-box input:focus ~ label,
+          .login-box .user-box input:valid ~ label 
+          {
+            top: -20px;
+            left: 0;
+            color: #fff;
+            font-size: 12px;
+          }
+
+          .login-box form a 
+          {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color:#404040;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 4px
+          }
+
+          .login-box a:hover 
+          {
+            background: #404040;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #404040 ,
+                        0 0 25px #404040,
+                        0 0 50px #404040,
+                        0 0 100px #404040;
+          }
+
+          .login-box a span 
+          {
+            position: absolute;
+            display: block;
+          }
+
+          .login-box a span:nth-child(1) 
+          {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #404040);
+            animation: btn-anim1 1s linear infinite;
+          }
+
+          @keyframes btn-anim1 
+          {
+            0% {
+              left: -100%;
+            }
+            50%,100% {
+              left: 100%;
+            }
+          }
+
+          .login-box a span:nth-child(2) 
+          {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #404040);
+            animation: btn-anim2 1s linear infinite;
+            animation-delay: .25s
+          }
+
+          @keyframes btn-anim2 
+          {
+            0% {
+              top: -100%;
+            }
+            50%,100% {
+              top: 100%;
+            }
+          }
+
+          .login-box a span:nth-child(3) 
+          {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, #404040);
+            animation: btn-anim3 1s linear infinite;
+            animation-delay: .5s
+          }
+
+          @keyframes btn-anim3 
+          {
+            0% {
+              right: -100%;
+            }
+            50%,100% {
+              right: 100%;
+            }
+          }
+
+          .login-box a span:nth-child(4) 
+          {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #404040);
+            animation: btn-anim4 1s linear infinite;
+            animation-delay: .75s
+          }
+
+          @keyframes btn-anim4 
+          {
+            0% {
+              bottom: -100%;
+            }
+            50%,100% {
+              bottom: 100%;
+            }
+          }
+
+          .gndr
+          {
+              color:#fff;
+              font-size: medium;
+          }
+
+          .bigdiv
+          {
+              margin-top: 7%;
+              margin-left: 8%;
+              margin-right: 8%;
+              padding-right: 10vh;
+              border: 5px solid #fff;
+              border-radius: 20px;
+              height: 60vh;
+              position: relative;
+          }
+          #img
+          {
+              padding-top: 12vh;
+              padding-left: 0px;
+              height: 15vh; width: 8vw;
+              margin-left: 10%;
+          }
+          #CHIT
+          {
+              font-size: 7vh;
+              color:#404040;
+              font-style: italic;
+              float:left;
+          }
+
+          .btn
+          {
+              cursor: pointer;
+              border: 1px solid#404040;
+              background-color: #404040;
+              height: 50px;
+              width: 200px;
+              color: #404040;
+              font-size: 1.5em;
+              box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+          } 
+          .h1
+          {
+              font-size: xx-large;
+              color: white;
+          }
+
+
+          .whitebox{
+            width: 50%; 
+            height: 75%; 
+            background-color: #fff; 
+            float:left;
+            font: 50px sans-serif;
+            height: 50vh; 
+            width: 36vw;
+            margin-left: 7%; 
+            margin-top: 3%; 
+            border-radius: 20px 0 0 20px; 
+            box-shadow: 0 15px 25px rgba(0,0,0,.6)
+          }
+          
+          .pixz
+          {
+            width:29%; height:50%; float:left;
+          }
+          
+          .chu
+          {
+            width:70vw;
+            height: 22vh; 
+            float: left;
+            padding-top: 10vh; 
+            font-size: 8vh; 
+            width: 15vw;
+            font-family:'Times New Roman', Times, serif;
+            font-weight: lighter;  
+            border-radius: 20px;
+            text-align: justify;
+
+            
+
+          }
+          
+          .explup
+          {
+            width: 100%;
+            height:25%; 
+            clear:both;
+            font-weight:200; 
+            margin:3%; 
+            font-size: xx-large; 
+            margin-top: 2%; 
+            font-family: 'Times New Roman', Times, serif;
+            
+          }
+
+          .leftwhitebx
+          {
+            width: 50%; 
+            height: 75%; 
+            background-color: rgba(253, 251, 253, 0.719); 
+            float:left; 
+            height: 50vh;
+            width: 36vw; 
+            margin-left: 0%; 
+            margin-right: 0%;
+            margin-top: 2.8%;  
+            border-radius:  0 20px 20px 0; 
+            box-shadow: 0 15px 25px rgba(0,0,0,.6);
+            position:absolute;
+            left:49.7%;
+          }
+
+/* @media (max-width:2000px)
+{
+  .chu
+  {
+  font-size: 4vh;
+  }
+} */
+    </style>
+
+</head>
+<body ><div class="bigdiv">
+    <div  class="whitebox">
+      <div class="pixz"><img src="https://zenprospect-production.s3.amazonaws.com/uploads/pictures/63d23115db5b8f0001b8d4a7/picture" alt="" id="img"></div>
+      <div class="chu">CHITKARA UNIVERSITY</div>
+      <div class="explup"> EXPLORE YOUR POTENTIAL</div>
+      </div>
+    <div class="leftwhitebx">
+      <div class="login-box">
+        <h1 class="h1">Login</h1>
+        <form action="final draft survey form.html">
+        <div class="user-box">
+            <input type="text" name="us" required maxlength="20">
+            <label>Username</label>
+        </div>
+        <div class="user-box">
+            <input type="number" name="rl" required maxlength="12">
+            <label>Roll No.</label>
+        </div>
+        <div class="user-box">
+            <input type="email" name="em" required>
+            <label>Email</label>
+        </div>
+        <div class="gndr">
+            <label>Gender</label>
+            <input type="radio" name="rad" required value="M">Male
+            <input type="radio" name="rad" required value="F">Female
+            
+        </div>
+        <div>
+        <a href="index2.html">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+        </a>
+        </div>
+        </form>
+    </div></div>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
